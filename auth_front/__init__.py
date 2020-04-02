@@ -15,7 +15,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 app.config['SECRET_KEY'] = 'secretkey'
 
-auth_api_url = "http://127.0.0.1:5000/"
+auth_api_url = "https://auth-app-api.herokuapp.com/"
 
 login_manager.init_app(app)
 login_manager.login_view = 'users.login'
