@@ -6,3 +6,4 @@ wtforms
 flask-wtf
 flask_login
 requests
+uwsgi
