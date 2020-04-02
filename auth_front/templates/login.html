@@ -1,0 +1,30 @@
+<!--login -->
+{% extends 'base.html' %}
+
+{% block content%}
+
+<div class="jumbotron">
+	<h1>Welcome to This page, to see more pages login</h1>
+	<form method="POST">
+		{{form.hidden_tag()}}
+		<div>{{ form.username.label}} {{ form.username(required=False) }}   <!--required= False when DataRequired message is custom-->
+	            {% for error in form.username.errors %}
+					<ul>
+						<span class="alert alert-warning" role="alert">*{{ error }}</span>
+					</ul>
+				{% endfor %}
+		</div>
+
+		<div>{{ form.password.label }}{{form.password(required=False) }}
+	            {% for error in form.password.errors %}
+					<ul>
+						<span class="alert alert-warning" role="alert">*{{ error }}</span>
+					</ul>
+				{% endfor %}
+		</div>
+		{{ form.submit }}
+	</form>
+</div>
+
+
+{% endblock %}

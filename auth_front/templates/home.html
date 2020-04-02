@@ -1,0 +1,31 @@
+<!--home -->
+{% extends 'base.html' %}
+
+{% block content%}
+
+
+	<div class="jumbotron">
+		<h1>Puppy Company Blog</h1>
+		<p>Welcome to Our page</p>
+		<form method="POST">
+			{{form.hidden_tag()}}
+			<div>{{ form.item.label}} {{ form.item(required=False) }}   <!--required= False when DataRequired message is custom-->
+		            {% for error in form.item.errors %}
+						<ul>
+							<span class="alert alert-warning" role="alert">*{{ error }}</span>
+						</ul>
+					{% endfor %}
+			</div>
+
+			{{ form.submit }}
+		</form>
+
+
+		<a class="btn btn-primary" href="{{url_for('core.items_list')}}" role="button">See list</a>
+
+	</div>
+
+
+
+
+{% endblock %}
